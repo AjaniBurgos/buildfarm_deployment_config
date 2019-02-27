@@ -2,7 +2,7 @@
 # Both master and repo machines have specific agents: agent_on_master and building_repostory respectively
 # That make use of this configuration as well.
 # If you use the GitHub authentication plugin with Jenkins you will want to set this to a GitHub username and access token.
-jenkins::slave::ui_user: 'admin'
+jenkins::slave::ui_user: 'cse-admin'
 jenkins::slave::ui_pass: 'changeme'
 # The version of the swarm client plugin should be the same between the jenkins master and agents on all hosts.
 # Note that versions above 3.0 require use of a modified version of the docker puppet module
@@ -12,8 +12,8 @@ jenkins::slave::version: *jenkins_swarm_version
 # This should be unchanged so that the masterurl always uses the hosts entry to reach master.
 jenkins::slave::masterurl: 'http://master:8080'
 
-master::ip: 172.30.1.145
-repo::ip: 172.30.1.69
+master::ip: 134.197.20.179
+repo::ip: 134.197.20.181
 
 # change this to match the timezone that this buildfarm is located in.
 timezone: 'America/Los_Angeles'
@@ -43,7 +43,7 @@ ssh_keys:
   #
   # Use the comment as the key name
   'jenkins-agent@my-buildfarm':
-      type: REPLACE_WITH_AGENT_SSH_KEY_TYPE
+      type: ssh-rha
       key: REPLACE_WITH_AGENT_SSH_KEY
       user: jenkins-agent
       require: User[jenkins-agent]
