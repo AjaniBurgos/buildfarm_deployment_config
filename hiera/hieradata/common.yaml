@@ -12,8 +12,8 @@ jenkins::slave::version: *jenkins_swarm_version
 # This should be unchanged so that the masterurl always uses the hosts entry to reach master.
 jenkins::slave::masterurl: 'http://master:8080'
 
-master::ip: 134.197.20.179
-repo::ip: 134.197.20.181
+master::ip: 172.31.24.188
+repo::ip: 172.31.21.72
 
 # change this to match the timezone that this buildfarm is located in.
 timezone: 'America/Los_Angeles'
